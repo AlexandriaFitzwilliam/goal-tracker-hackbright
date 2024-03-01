@@ -1,7 +1,23 @@
 import { useState } from 'react'
+import './App.css'
+import { initializeApp } from 'firebase/app';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBXQSIbAtbxmrBLk0WGGR1jigxdTkGLsyc",
+  authDomain: "goal-tracker-hackbright.firebaseapp.com",
+  projectId: "goal-tracker-hackbright",
+  storageBucket: "goal-tracker-hackbright.appspot.com",
+  messagingSenderId: "988533694289",
+  appId: "1:988533694289:web:0850046f179ef1f6917d70"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// remove these later
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+
 
 function App() {
   const [count, setCount] = useState(0)
