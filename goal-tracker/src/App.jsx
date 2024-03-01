@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -18,6 +18,17 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+
+// Detect auth state
+onAuthStateChanged(auth, user => {
+  if (user != null) {
+    console.log('logged in!');
+  } else {
+    console.log('No user');
+  }
+});
+
 
 // remove these later
 import reactLogo from './assets/react.svg'
